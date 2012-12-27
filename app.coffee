@@ -1,9 +1,9 @@
 Ext.Loader.setPath
     "Ext": "touch/src",
-    "DiversLog": "app"
+    "DriversLog": "app"
 
 Ext.application 
-    name: "DiversLog"
+    name: "DriversLog"
 
     requires: [
         "Ext.MessageBox"
@@ -32,7 +32,7 @@ Ext.application
         Ext.fly("appLoadingIndicator").destroy();
 
         # Initialize the main view
-        Ext.Viewport.add(Ext.create("DiversLog.view.Main"));
+        Ext.Viewport.add(Ext.create("DriversLog.view.Main"));
 
     onUpdated: ->
         Ext.Msg.confirm "Application Update",

@@ -1,4 +1,4 @@
-Ext.define "DiversLog.view.Main"
+Ext.define "DriversLog.view.Main"
     extend: "Ext.tab.Panel"
 
     alias: "widget.mainView"

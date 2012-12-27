@@ -3,11 +3,11 @@
 
   Ext.Loader.setPath({
     "Ext": "touch/src",
-    "DiversLog": "app"
+    "DriversLog": "app"
   });
 
   Ext.application({
-    name: "DiversLog",
+    name: "DriversLog",
     requires: ["Ext.MessageBox"],
     views: ["Main"],
     icon: {
@@ -27,7 +27,7 @@
     },
     launch: function() {
       Ext.fly("appLoadingIndicator").destroy();
-      return Ext.Viewport.add(Ext.create("DiversLog.view.Main"));
+      return Ext.Viewport.add(Ext.create("DriversLog.view.Main"));
     },
     onUpdated: function() {
       return Ext.Msg.confirm("Application Update", "This application has just successfully been updated to the latest version. Reload now?", function(buttonId) {
