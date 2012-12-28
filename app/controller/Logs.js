@@ -5,7 +5,8 @@
     extend: "Ext.app.Controller",
     config: {
       refs: {
-        mainView: "mainview"
+        mainView: "mainview",
+        logEditor: "logeditor"
       },
       control: {
         mainView: {
@@ -13,7 +14,16 @@
         }
       }
     },
+    slideLeftTransition: {
+      type: 'slide',
+      direction: 'left'
+    },
+    slideRightTransition: {
+      type: 'slide',
+      direction: 'right'
+    },
     onAddLogEntryCommand: function() {
+      Ext.Viewport.animateActiveItem(this.getLogEditor(), this.slideLeftTransition);
       return console.log("add log entry");
     }
   });

@@ -1,5 +1,5 @@
 Ext.define "DriversLog.view.Main"
-    extend: "Ext.tab.Panel"
+    extend: "Ext.TabPanel"
 
     alias: "widget.mainview"
 
@@ -8,42 +8,13 @@ Ext.define "DriversLog.view.Main"
     ]
 
     config:
-        tabBarPosition: "bottom"
+        layout:
+            type: "fit"
+
         # bottom bar
+        tabBarPosition: "bottom"
         items: [
             # main list view
-            {
-                title: "Driver's Log"
-                iconCls: "speedometer"
-
-                scrollable: true
-
-                items:[
-                    # title bar
-                    {
-                        docked: "top"
-                        xtype: "titlebar"
-                        title: "Driver's Log"
-                        items: [
-                            {
-                                xtype:      "button"
-                                ui:         "action"
-                                iconCls:    "add"
-                                align:      "right"
-                                iconMask:   true
-                                itemId:     "addLogEntryButton"
-                            }
-                        ]
-                    }
-                ]
-            }
-        ]
-        # connect listeners to ui elements to fire events to controllers
-        listeners: [
-            {
-                delegate:   "#addLogEntryButton"
-                event:      "tap"
-                fn:         ->
-                    @fireEvent "addLogEntryCommand"
-            }
+            { xtype: "logslist" }
+            { title: "more" }
         ]

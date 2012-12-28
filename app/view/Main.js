@@ -2,42 +2,19 @@
 (function() {
 
   Ext.define("DriversLog.view.Main", {
-    extend: "Ext.tab.Panel",
+    extend: "Ext.TabPanel",
     alias: "widget.mainview",
     requires: ["Ext.TitleBar"],
     config: {
+      layout: {
+        type: "fit"
+      },
       tabBarPosition: "bottom",
       items: [
         {
-          title: "Driver's Log",
-          iconCls: "speedometer",
-          scrollable: true,
-          items: [
-            {
-              docked: "top",
-              xtype: "titlebar",
-              title: "Driver's Log",
-              items: [
-                {
-                  xtype: "button",
-                  ui: "action",
-                  iconCls: "add",
-                  align: "right",
-                  iconMask: true,
-                  itemId: "addLogEntryButton"
-                }
-              ]
-            }
-          ]
-        }
-      ],
-      listeners: [
-        {
-          delegate: "#addLogEntryButton",
-          event: "tap",
-          fn: function() {
-            return this.fireEvent("addLogEntryCommand");
-          }
+          xtype: "logslist"
+        }, {
+          title: "more"
         }
       ]
     }

@@ -9,9 +9,9 @@ Ext.application
         "Ext.MessageBox"
     ]
 
-    views: ["Main"]
-
     controllers: ["Logs"]
+
+    views: ["Main", "LogEditor", "LogsList", "Logs"]
 
     icon:
         "57": "resources/icons/Icon.png",
@@ -34,7 +34,10 @@ Ext.application
         Ext.fly("appLoadingIndicator").destroy();
 
         # Initialize the main view
-        Ext.Viewport.add(Ext.create("DriversLog.view.Main"));
+        Ext.Viewport.add [
+            Ext.create "DriversLog.view.Main"
+            Ext.create "DriversLog.view.LogEditor"
+        ]
 
     onUpdated: ->
         Ext.Msg.confirm "Application Update",

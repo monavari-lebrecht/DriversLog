@@ -3,10 +3,20 @@ Ext.define "DriversLog.controller.Logs",
 
 	config:
 		refs:
-			mainView: "mainview"
+			mainView: 			"mainview"
+			logEditor:	 		"logeditor"
 		control:
 			mainView:
 				addLogEntryCommand: "onAddLogEntryCommand"
 
+	slideLeftTransition: 
+		type: 'slide'
+		direction: 'left'
+
+	slideRightTransition: 
+		type: 'slide'
+		direction: 'right'
+
 	onAddLogEntryCommand: ->
+		Ext.Viewport.animateActiveItem @getLogEditor(), @slideLeftTransition
 		console.log "add log entry"

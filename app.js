@@ -9,8 +9,8 @@
   Ext.application({
     name: "DriversLog",
     requires: ["Ext.MessageBox"],
-    views: ["Main"],
     controllers: ["Logs"],
+    views: ["Main", "LogEditor", "LogsList", "Logs"],
     icon: {
       "57": "resources/icons/Icon.png",
       "72": "resources/icons/Icon~ipad.png",
@@ -28,7 +28,7 @@
     },
     launch: function() {
       Ext.fly("appLoadingIndicator").destroy();
-      return Ext.Viewport.add(Ext.create("DriversLog.view.Main"));
+      return Ext.Viewport.add([Ext.create("DriversLog.view.Main"), Ext.create("DriversLog.view.LogEditor")]);
     },
     onUpdated: function() {
       return Ext.Msg.confirm("Application Update", "This application has just successfully been updated to the latest version. Reload now?", function(buttonId) {
