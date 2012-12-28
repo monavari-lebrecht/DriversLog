@@ -5,35 +5,8 @@
     extend: "Ext.Panel",
     alias: "widget.logslist",
     config: {
-      title: "Driver's Log",
-      iconCls: "speedometer",
       scrollable: true,
-      items: [
-        {
-          docked: "top",
-          xtype: "titlebar",
-          title: "Driver's Log",
-          items: [
-            {
-              xtype: "button",
-              ui: "action",
-              iconCls: "add",
-              align: "right",
-              iconMask: true,
-              itemId: "addLogEntryButton"
-            }
-          ]
-        }
-      ],
-      listeners: [
-        {
-          delegate: "#addLogEntryButton",
-          event: "tap",
-          fn: function() {
-            return this.fireEvent("addLogEntryCommand");
-          }
-        }
-      ]
+      items: []
     }
   });
 

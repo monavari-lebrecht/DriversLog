@@ -5,11 +5,11 @@
     extend: "Ext.app.Controller",
     config: {
       refs: {
-        mainView: "mainview",
+        logsView: "logsview",
         logEditor: "logeditor"
       },
       control: {
-        mainView: {
+        logsView: {
           addLogEntryCommand: "onAddLogEntryCommand"
         }
       }

@@ -3,10 +3,10 @@ Ext.define "DriversLog.controller.Logs",
 
 	config:
 		refs:
-			mainView: 			"mainview"
+			logsView: 			"logsview"
 			logEditor:	 		"logeditor"
 		control:
-			mainView:
+			logsView:
 				addLogEntryCommand: "onAddLogEntryCommand"
 
 	slideLeftTransition: 

@@ -15,6 +15,5 @@ Ext.define "DriversLog.view.Main"
         tabBarPosition: "bottom"
         items: [
             # main list view
-            { xtype: "logslist" }
-            { title: "more" }
+            { xtype: "logsview" }
         ]

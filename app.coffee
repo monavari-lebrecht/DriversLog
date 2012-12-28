@@ -11,7 +11,7 @@ Ext.application
 
     controllers: ["Logs"]
 
-    views: ["Main", "LogEditor", "LogsList", "Logs"]
+    views: ["Main", "LogEditor", "LogsList", "LogsView"]
 
     icon:
         "57": "resources/icons/Icon.png",

@@ -12,9 +12,7 @@
       tabBarPosition: "bottom",
       items: [
         {
-          xtype: "logslist"
-        }, {
-          title: "more"
+          xtype: "logsview"
         }
       ]
     }
