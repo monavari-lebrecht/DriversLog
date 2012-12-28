@@ -1,14 +1,11 @@
 Ext.define "DriversLog.view.Main"
     extend: "Ext.tab.Panel"
 
-    alias: "widget.mainView"
+    alias: "widget.mainview"
 
     requires: [
         "Ext.TitleBar"
     ]
-
-    onAddLogEntryTap: ->
-        console.log "test"
 
     config:
         tabBarPosition: "bottom"
@@ -34,17 +31,19 @@ Ext.define "DriversLog.view.Main"
                                 iconCls:    "add"
                                 align:      "right"
                                 iconMask:   true
-                                itemId:     "addNoteButton"
+                                itemId:     "addLogEntryButton"
                             }
                         ]
                     }
                 ]
             }
         ]
+        # connect listeners to ui elements to fire events to controllers
         listeners: [
             {
-                delegate:   "#addNoteButton"
+                delegate:   "#addLogEntryButton"
                 event:      "tap"
-                fn:         "onAddLogEntryTap"
+                fn:         ->
+                    @fireEvent "addLogEntryCommand"
             }
         ]

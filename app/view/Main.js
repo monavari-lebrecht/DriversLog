@@ -3,11 +3,8 @@
 
   Ext.define("DriversLog.view.Main", {
     extend: "Ext.tab.Panel",
-    alias: "widget.mainView",
+    alias: "widget.mainview",
     requires: ["Ext.TitleBar"],
-    onAddLogEntryTap: function() {
-      return console.log("test");
-    },
     config: {
       tabBarPosition: "bottom",
       items: [
@@ -27,7 +24,7 @@
                   iconCls: "add",
                   align: "right",
                   iconMask: true,
-                  itemId: "addNoteButton"
+                  itemId: "addLogEntryButton"
                 }
               ]
             }
@@ -36,9 +33,11 @@
       ],
       listeners: [
         {
-          delegate: "#addNoteButton",
+          delegate: "#addLogEntryButton",
           event: "tap",
-          fn: "onAddLogEntryTap"
+          fn: function() {
+            return this.fireEvent("addLogEntryCommand");
+          }
         }
       ]
     }
